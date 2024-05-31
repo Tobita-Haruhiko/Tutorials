@@ -1,9 +1,10 @@
 import { useState } from 'react';
 
 export default function Twitter() {
-  const post2 = ["B", "This is a sample tweet!"];
-  const post1 = ["C", "Another example of a tweet."]; 
-  const [tweetText, setTweetText] = useState([post1, post2]);
+  type tweetContainer = {user: string, text: string};
+  const post2:tweetContainer = {user:"B", text:"This is a sample tweet!"}
+  const post1:tweetContainer = {user:"C", text:"Another example of a tweet."}
+  const [tweetList, setTweetList] = useState([post1, post2]);  
 
   function submit() {
    //var inputText = document.getElementById("submitText").value;
@@ -11,13 +12,13 @@ export default function Twitter() {
     //document.getElementById("submitText").value = "";
   }
 
-  const board = tweetText.map((texts, num) => {
+  const board = tweetList.map((posts, num) => {
     return (
       <div className="post" key={num}>
-        <a href="#"><div className="userIcon">{texts[0]}</div></a>
+        <a href="#"><div className="userIcon">{posts.user}</div></a>
         <div className="postText">
-          <a href="#"><p className="userName">{texts[0]}</p></a>
-          <p className="text">{texts[1]}</p>
+          <a href="#"><p className="userName">{posts.user}</p></a>
+          <p className="text">{posts.text}</p>
         </div>
       </div>
     );
