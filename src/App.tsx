@@ -6,9 +6,9 @@ export default function Twitter() {
   const [tweetText, setTweetText] = useState([post1, post2]);
 
   function submit() {
-    var inputText = document.getElementById("submitText").value;
-    setTweetText([...tweetText, ["A", inputText]]);
-    document.getElementById("submitText").value = "";
+   //var inputText = document.getElementById("submitText").value;
+    //setTweetText([...tweetText, ["A", inputText]]);
+    //document.getElementById("submitText").value = "";
   }
 
   const board = tweetText.map((texts, num) => {
@@ -38,4 +38,3 @@ export default function Twitter() {
     </>
   );
 }
-
