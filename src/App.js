@@ -8,6 +8,7 @@ export default function Twitter() {
   function submit() {
     var inputText = document.getElementById("submitText").value;
     setTweetText([...tweetText, ["A", inputText]]);
+    document.getElementById("submitText").value = "";
   }
 
   const board = tweetText.map((texts, num) => {
