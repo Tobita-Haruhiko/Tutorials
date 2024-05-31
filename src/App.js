@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
 export default function Twitter() {
-  let post2 = ["B", "This is a sample tweet!"];
-  let post1 = ["C", "Another example of a tweet."]; 
+  const post2 = ["B", "This is a sample tweet!"];
+  const post1 = ["C", "Another example of a tweet."]; 
   const [tweetText, setTweetText] = useState([post1, post2]);
 
   function submit() {
