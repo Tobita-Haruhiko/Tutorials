@@ -12,15 +12,13 @@ export default function Twitter() {
 
   const board = tweetText.map((texts, num) => {
     return (
-      <>
-        <div className="post">
-        <a href="#"><div className="userIcon">{tweetText[num][0]}</div></a>
+      <div className="post" key={num}>
+        <a href="#"><div className="userIcon">{texts[0]}</div></a>
         <div className="postText">
-          <a href="#"><p className="userName">{tweetText[num][0]}</p></a>
-          <p className="text">{tweetText[num][1]}</p>
+          <a href="#"><p className="userName">{texts[0]}</p></a>
+          <p className="text">{texts[1]}</p>
         </div>
       </div>
-      </>
     );
   });
 
