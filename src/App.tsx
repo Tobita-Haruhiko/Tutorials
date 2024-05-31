@@ -4,12 +4,13 @@ export default function Twitter() {
   type tweetContainer = {user: string, text: string};
   const post2:tweetContainer = {user:"B", text:"This is a sample tweet!"}
   const post1:tweetContainer = {user:"C", text:"Another example of a tweet."}
-  const [tweetList, setTweetList] = useState([post1, post2]);  
+  const [tweetList, setTweetList] = useState([post1, post2]); 
+  const [Textbox, setTextbox] = useState("");
 
   function submit() {
-   //var inputText = document.getElementById("submitText").value;
-    //setTweetText([...tweetText, ["A", inputText]]);
-    //document.getElementById("submitText").value = "";
+    const newTweet:tweetContainer = {user:"A", text:Textbox}
+    setTweetList([...tweetList, newTweet]);
+    setTextbox("");
   }
 
   const board = tweetList.map((posts, num) => {
@@ -29,7 +30,15 @@ export default function Twitter() {
       <main>
       <div className="tweet">
         <a href="#"><div className="userIcon">A</div></a>
-        <input type="text" placeholder="What's happening?" id="submitText"></input>
+
+        <input 
+          type="text"
+          value={Textbox}
+          onChange={e => setTextbox(e.target.value)}
+          placeholder="What's happening?"
+          id="submitText">
+        </input>
+
         <button onClick={submit}>Tweet</button>
       </div>
       <div className="board">
