@@ -10,9 +10,14 @@ export default function Twitter() {
 
   function submit() {
     const newTweet:tweetContainer = {user:usernameBox, text:Textbox}
-    setTweetList([...tweetList, newTweet]);
-    setTextbox("");
-    setUsernameBox("");
+
+    if (!(newTweet.user == "" || newTweet.text == "")) {
+      setTweetList([...tweetList, newTweet]);
+      setTextbox("");
+      setUsernameBox("");
+    }else{
+      alert("ユーザー名とツイートする文章の両方を入力してください");
+    }
   }
 
   const board = tweetList.map((posts, num) => {
