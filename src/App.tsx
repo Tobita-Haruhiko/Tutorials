@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { string } from 'yargs';
 
 export default function Twitter() {
   type tweetContainer = {user: string, text: string};
@@ -22,12 +23,14 @@ export default function Twitter() {
 
   const TweetComponent = ({posts, num}:{posts: tweetContainer, num: number}) => {
     return (
-      <div className="post" key={num}>
-        <a href="#"><div className="userIcon">{posts.user.charAt(0)}</div></a>
-        <div className="postText">
-          <a href="#"><p className="userName">{posts.user}</p></a>
-          <p className="text">{posts.text}</p>
-        </div>
+      <div className={'color' + String(num%3)} key={num}>
+        <div className='post'>
+          <a href="#"><div className="userIcon">{posts.user.charAt(0)}</div></a>
+          <div className="postText">
+            <a href="#"><p className="userName">{posts.user}</p></a>
+            <p className="text">{posts.text}</p>
+          </div>
+        </div> 
       </div>
     );
   }
