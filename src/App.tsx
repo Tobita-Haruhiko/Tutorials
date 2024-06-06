@@ -4,13 +4,9 @@ import { string } from 'yargs';
 
 export default function Twitter() {
   type tweetContainer = {user: string, text: string};
-  const post6:tweetContainer = {user:"X", text:"This is a sample tweet!"}
-  const post5:tweetContainer = {user:"Y", text:"This is a sample tweet!"}
-  const post4:tweetContainer = {user:"Z", text:"This is a sample tweet!"}
-  const post3:tweetContainer = {user:"A", text:"This is a sample tweet!"}
   const post2:tweetContainer = {user:"B", text:"This is a sample tweet!"}
   const post1:tweetContainer = {user:"C", text:"Another example of a tweet."}
-  const [tweetList, setTweetList] = useState([post1, post2, post3, post4, post5, post6]); 
+  const [tweetList, setTweetList] = useState([post1, post2]); 
   const [Textbox, setTextbox] = useState("");
   const [usernameBox, setUsernameBox] = useState("");
 
