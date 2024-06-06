@@ -11,7 +11,7 @@ export default function Twitter() {
   function submit() {
     const newTweet:tweetContainer = {user:usernameBox, text:Textbox}
 
-    if (!(newTweet.user == "" || newTweet.text == "")) {
+    if (!(newTweet.user === "" || newTweet.text === "")) {
       setTweetList([...tweetList, newTweet]);
       setTextbox("");
       setUsernameBox("");
@@ -20,7 +20,12 @@ export default function Twitter() {
     }
   }
 
-  const board = tweetList.map((posts, num) => {
+  type tweetComponentProps = {
+    posts: tweetContainer
+    num: number
+  }
+
+  const TweetComponent = ({posts, num}:tweetComponentProps) => {
     return (
       <div className="post" key={num}>
         <a href="#"><div className="userIcon">{posts.user.charAt(0)}</div></a>
@@ -30,7 +35,16 @@ export default function Twitter() {
         </div>
       </div>
     );
+  }
+
+  const board = tweetList.map((posts, num) => {
+    return(
+      <TweetComponent posts={posts} num={num}/>
+    )
+    
   });
+
+
 
   return (
     <>
