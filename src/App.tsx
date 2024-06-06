@@ -20,12 +20,7 @@ export default function Twitter() {
     }
   }
 
-  type tweetComponentProps = {
-    posts: tweetContainer
-    num: number
-  }
-
-  const TweetComponent = ({posts, num}:tweetComponentProps) => {
+  const TweetComponent = ({posts, num}:{posts: tweetContainer, num: number}) => {
     return (
       <div className="post" key={num}>
         <a href="#"><div className="userIcon">{posts.user.charAt(0)}</div></a>
@@ -40,11 +35,8 @@ export default function Twitter() {
   const board = tweetList.map((posts, num) => {
     return(
       <TweetComponent posts={posts} num={num}/>
-    )
-    
+    )  
   });
-
-
 
   return (
     <>
