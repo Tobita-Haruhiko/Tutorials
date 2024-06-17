@@ -1,10 +1,8 @@
-import { useMemo } from 'react';
+import { useState } from 'react';
 type tweetContainer = {user: string, text: string};
 
 export const TweetComponent = ({posts, num}:{posts: tweetContainer, num: number}) => {
-    const rand = useMemo(() => {return(Math.floor(Math.random() * 3))},[])
-    
-    console.log('num: ' + num + ', rand:' + Number(rand))
+    const [rand, setRand] = useState(Math.floor(Math.random() * 3))
 
     return (
       <div className={'color' + rand}>
