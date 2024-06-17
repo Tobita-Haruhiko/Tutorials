@@ -1,6 +1,5 @@
-import { random } from 'node-forge';
-import { useState } from 'react';
-import { string } from 'yargs';
+import { useState, useRef, useMemo } from 'react';
+import { TweetComponent } from './TweetComponent';
 
 export default function Twitter() {
   type tweetContainer = {user: string, text: string};
@@ -22,25 +21,9 @@ export default function Twitter() {
     }
   }
 
-  const TweetComponent = ({posts, num}:{posts: tweetContainer, num: number}) => {
-    const rand = Math.floor(Math.random() * 3)
-
-    return (
-      <div className={'color' + rand} key={num}>
-        <div className='post'>
-          <a href="#"><div className="userIcon">{posts.user.charAt(0)}</div></a>
-          <div className="postText">
-            <a href="#"><p className="userName">{posts.user}</p></a>
-            <p className="text">{posts.text}</p>
-          </div>
-        </div> 
-      </div>
-    );
-  }
-
   const board = tweetList.map((posts, num) => {
     return(
-      <TweetComponent posts={posts} num={num}/>
+      <TweetComponent key={num} posts={posts} num={num}/>
     )  
   });
 
