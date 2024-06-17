@@ -90,6 +90,18 @@ div.post {
     transition: 0.2s;
 }
 
+div.color0 {
+    background-color: paleturquoise;
+}
+
+div.color1{
+    background-color: palegoldenrod;
+}
+
+div.color2{
+    background-color: palevioletred;
+}
+
 div.post:hover {background-color: #F7F7F7;}
 
 div.postText {
