@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { TweetComponent } from './TweetComponent';
 
 export default function Twitter() {
   type tweetContainer = {user: string, text: string};
@@ -20,21 +21,9 @@ export default function Twitter() {
     }
   }
 
-  const TweetComponent = ({posts, num}:{posts: tweetContainer, num: number}) => {
-    return (
-      <div className="post" key={num}>
-        <a href="#"><div className="userIcon">{posts.user.charAt(0)}</div></a>
-        <div className="postText">
-          <a href="#"><p className="userName">{posts.user}</p></a>
-          <p className="text">{posts.text}</p>
-        </div>
-      </div>
-    );
-  }
-
   const board = tweetList.map((posts, num) => {
     return(
-      <TweetComponent posts={posts} num={num}/>
+      <TweetComponent key={num} posts={posts} num={num}/>
     )  
   });
 
@@ -57,7 +46,6 @@ export default function Twitter() {
             onChange={e => setTextbox(e.target.value)}
             placeholder="What's happening?">
           </input>
-          
         </div>
 
         <button onClick={submit}>Tweet</button>
