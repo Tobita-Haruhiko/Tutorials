@@ -1,4 +1,4 @@
-import { useState, useRef, useMemo } from 'react';
+import { useState } from 'react';
 import { TweetComponent } from './TweetComponent';
 
 export default function Twitter() {
@@ -46,7 +46,6 @@ export default function Twitter() {
             onChange={e => setTextbox(e.target.value)}
             placeholder="What's happening?">
           </input>
-          
         </div>
 
         <button onClick={submit}>Tweet</button>

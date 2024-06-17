@@ -1,4 +1,4 @@
-import { useState, useRef, useMemo } from 'react';
+import { useMemo } from 'react';
 type tweetContainer = {user: string, text: string};
 
 export const TweetComponent = ({posts, num}:{posts: tweetContainer, num: number}) => {
