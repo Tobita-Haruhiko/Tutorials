@@ -3,20 +3,13 @@
     box-sizing: border-box;
     text-align: center;
     font-family: Noto Sans JP;
-    /*border: 1px solid turquoise;*/
     color: #3C4956;
-    ;
-}
-
-html {
-    border: none;
 }
 
 body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: none;
 }
 
 div.outsideBorder {
@@ -25,13 +18,9 @@ div.outsideBorder {
     align-items: center;
     background-color: #FFFFFF;
     padding-top: 64px;
-
     width: 916px;
     height: 1428px;
-    gap: 0px;
     border-radius: 16px;
-    border: 2px 0px 0px 0px;
-    opacity: 0px;
 
     border: 2px solid #D9DCE0;
 }
@@ -40,19 +29,13 @@ div.component {
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    width: 600px;
-    height: 1048px;
     gap: 40px;
-    opacity: 0px;
 }
 
 div.title {
     width: 600px;
-    height: 168px;
     padding: 0px 0px 40px 0px;
     gap: 8px;
-    opacity: 0px;
 
     border-bottom: 1px solid #DDDDDD;
 }
@@ -62,9 +45,14 @@ h1 {
     font-weight: 400;
     line-height: 72px;
     letter-spacing: 0.04em;
+    margin: 0;
 }
 
 div.datas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     width: 600px;
     height: 418px;
     padding: 0px 0px 40px 0px;
@@ -80,6 +68,8 @@ h2{
     font-weight: 400;
     line-height: 39px;
     letter-spacing: 0.04em;
+
+    margin: 0;
 
     color: #666666;
 
@@ -150,6 +140,10 @@ div.interview {
     height: 382px;
     gap: 24px;
     opacity: 0px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 div.interviewContent {
@@ -168,6 +162,7 @@ table {
     opacity: 0px;
     border: 1px solid #DDDDDD;
     border-collapse: collapse;
+    margin-bottom: 24px;
     
 }
 
